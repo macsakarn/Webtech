@@ -1,6 +1,6 @@
 <template>
   <div class="character">
-    <city_1 />
+    <p>mac</p>
   </div>
 </template>
 <script>
