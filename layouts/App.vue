@@ -13,11 +13,11 @@
 
       <div class="nav inline">
         <!-- <div style="position: absolute; z-index: 1; transition: all 0.2s ease-in-out 0s; background-color: rgb(105, 224, 255); height: 5px; left: 55px; width: 42px; top: 0px;"></div> -->
-        <NuxtLink to="/" class="mx-4">HOME</NuxtLink>
-        <NuxtLink to="/news" class="mx-4">NEWS</NuxtLink>
-        <NuxtLink to="/character" class="mx-4">CHARACTERS</NuxtLink>
+        <NuxtLink to="/" class="mx-2">HOME</NuxtLink>
+        <NuxtLink to="/news" class="mx-2">NEWS</NuxtLink>
+        <NuxtLink to="/character" class="mx-2">CHARACTERS</NuxtLink>
         <div class="dropdown inline-block py-8">
-          <a class="mx-4 my-5">EXPLORE</a>
+          <a class="mx-2 my-5">EXPLORE</a>
           <ul class="drop bg-opacity-75">
             <NuxtLink to="#" class="block my-8 ml-4">ABOUT GAME</NuxtLink>
             <NuxtLink to="#" class="block my-8 ml-4">TEYVAT</NuxtLink>
@@ -27,12 +27,12 @@
         </div>
         <a
           href="https://forums.mihoyo.com/genshin/"
-          class="mx-4"
+          class="mx-2"
           target="_blank"
           >FORUMS</a
         >
-        <NuxtLink to="/#" class="mx-4">TOP-UP</NuxtLink>
-        <NuxtLink to="/#" class="mx-4">REDEEM CODE</NuxtLink>
+        <NuxtLink to="/#" class="mx-2">TOP-UP</NuxtLink>
+        <NuxtLink to="/#" class="mx-2">REDEEM CODE</NuxtLink>
         <div class="nav__login inline">
           <button class="btn_login">
             <span>Log In</span>
@@ -41,7 +41,14 @@
         </div>
       </div>
     </div>
+
     <Nuxt />
+    <audio
+      autoplay="autoplay"
+      loop="true"
+      src="../assets/music/music_1.mp3"
+      style="position: absolute; top: -1000px;"
+    ></audio>
   </div>
 </template>
 
@@ -73,7 +80,7 @@ export default {
 
 .nav__login {
   position: relative;
-  left: 40%;
+  left: 60%;
   span {
     color: #cccccc;
   }

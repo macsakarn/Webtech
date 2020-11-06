@@ -14,7 +14,7 @@
       </div>
       <div class="sign flex">
         <div class="btn-play">
-          <button class="play-vdo">
+          <button class="play-vdo" @click="modalOpen = true">
             ::before
           </button>
         </div>
@@ -46,7 +46,14 @@ margin: 32px auto 27px;"
           </li>
         </ul>
       </div>
+
+      <img
+        src="https://uploadstatic-sea.mihoyo.com/contentweb/20200925/2020092514130499814.png"
+        class="poster__age"
+      />
     </div>
+
+    <model_play v-if="modalOpen" @close="modalOpen = false" />
 
     <section class="new ">
       <h3>NEW</h3>
@@ -124,7 +131,8 @@ export default {
   layout: "App",
   components: {
     newimg: () => import("../components/newimg"),
-    city_1: () => import("../components/city_1")
+    city_1: () => import("../components/city_1"),
+    model_play: () => import("../components/model_play")
   },
   data() {
     return {
@@ -141,13 +149,21 @@ export default {
           image_city: backgroundUrl_2_1,
           image_char: backgroundUrl_2_2
         }
-      ]
+      ],
+      modalOpen: false
     };
   }
 };
 </script>
 
 <style scoped lang="scss">
+.poster__age {
+  position: absolute;
+  z-index: 9;
+  left: 10px;
+  bottom: 10px;
+}
+
 .modal {
   transition: opacity 0.25s ease;
 }
