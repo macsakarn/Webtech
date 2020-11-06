@@ -59,7 +59,6 @@
     line-height: 260px;
     width: 100%;
     height: 260px;
-    background: url("../assets/home/back_text.png") center no-repeat;
     background-size: auto;
     background-size: 132px;
     text-align: center;

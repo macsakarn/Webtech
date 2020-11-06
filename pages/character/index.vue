@@ -57,7 +57,9 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  layout: "App",
+};
 </script>
 
 <style scoped>
