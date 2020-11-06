@@ -115,6 +115,7 @@ margin: 32px auto 27px;"
     <section class="city">
       <ul>
         <city_1 v-for="city in city" :key="city.id" :item="city" />
+        <coming_soon />
       </ul>
     </section>
   </div>
@@ -131,7 +132,8 @@ export default {
   components: {
     newimg: () => import("../components/newimg"),
     city_1: () => import("../components/city_1"),
-    model_play: () => import("../components/model_play")
+    model_play: () => import("../components/model_play"),
+    coming_soon: () => import("../components/coming_soon")
   },
   data() {
     return {
@@ -149,8 +151,21 @@ export default {
           image_char: backgroundUrl_2_2
         }
       ],
-      modalOpen: false
+      modalOpen: false,
+      isUserScrolling: 0
     };
+  },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll(event) {
+      this.isUserScrolling = window.scrollY > 0;
+      console.log("calling handleScroll");
+    }
   }
 };
 </script>

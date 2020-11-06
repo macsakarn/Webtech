@@ -122,7 +122,7 @@ export default {};
   position: relative;
   width: 100%;
   height: 100%;
-  background-image: url("../../assets/City/liyue/6c9d197.png") no-repeat;
+  /* background-image: url("../../assets/City/liyue/6c9d197.png") no-repeat; */
   background-position-x: center;
   background-repeat-x: no-repeat;
   background-repeat-y: no-repeat;
@@ -175,9 +175,4 @@ export default {};
 .character .swiper-slide-active .character__content {
   opacity: 1;
 }
-
-.character__content {
-  position: absolute;
-  z-index: 4;
-  top: 18vh;
-  left: 
+</style>

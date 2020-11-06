@@ -1,15 +1,9 @@
 <template>
-  <li class="coming_soon">
+  <li class="city_1">
     <div class="city_list"></div>
     <p>Coming Soon</p>
   </li>
 </template>
-
-<script>
-export default {
-  props: ["item"]
-};
-</script>
 
 <style scoped lang="scss">
 .city_1 {
@@ -18,7 +12,6 @@ export default {
   height: 260px;
   background: center no-repeat;
   background-size: 100% auto;
-  cursor: pointer;
   overflow: hidden;
 
   .city_list {
@@ -50,6 +43,11 @@ export default {
     transition: all 0.2s 0s ease-in;
     border: #fff solid 6px;
     box-sizing: border-box;
+  }
+
+  a {
+    width: 100%;
+    height: 260px;
   }
 
   p {
