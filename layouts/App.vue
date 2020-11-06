@@ -43,12 +43,6 @@
     </div>
 
     <Nuxt />
-    <audio
-      autoplay="autoplay"
-      loop="true"
-      src="../assets/music/music_1.mp3"
-      style="position: absolute; top: -1000px;"
-    ></audio>
   </div>
 </template>
 
