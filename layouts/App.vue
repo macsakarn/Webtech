@@ -33,12 +33,13 @@
         >
         <NuxtLink to="/#" class="mx-2">TOP-UP</NuxtLink>
         <NuxtLink to="/#" class="mx-2">REDEEM CODE</NuxtLink>
-        <div class="nav__login inline">
-          <button class="btn_login">
-            <span>Log In</span>
-            <img class="inline" src="../assets/nav/login.png" alt="login" />
-          </button>
-        </div>
+      </div>
+
+      <div class="nav__login inline ">
+        <button class="btn_login">
+          <span>Log In</span>
+          <img class="inline" src="../assets/nav/login.png" alt="login" />
+        </button>
       </div>
     </div>
 
@@ -73,8 +74,13 @@ export default {
 }
 
 .nav__login {
-  position: relative;
-  left: 60%;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  right: 30px;
+  height: 100%;
+  white-space: nowrap;
   span {
     color: #cccccc;
   }

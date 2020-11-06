@@ -46,7 +46,6 @@ margin: 32px auto 27px;"
           </li>
         </ul>
       </div>
-
       <img
         src="https://uploadstatic-sea.mihoyo.com/contentweb/20200925/2020092514130499814.png"
         class="poster__age"
