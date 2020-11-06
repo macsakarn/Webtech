@@ -1,6 +1,5 @@
 <template>
   <div class="character">
-<<<<<<< HEAD
     <div class="character__bg character__bg1">
       <img src="..\..\assets\City\mond\2020021114281584004.jpg" />
     </div>
@@ -55,11 +54,6 @@
         </li>
       </ul>
     </div>
-=======
-    <p>mac</p>
-    <p>test</p>
-    g
->>>>>>> f40b1fa4308be85b7c0f330905b741ef81082ff7
   </div>
 </template>
 <script>
