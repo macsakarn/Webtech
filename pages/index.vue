@@ -14,7 +14,9 @@
       </div>
       <div class="sign flex">
         <div class="btn-play">
-          <button class="play-vdo"></button>
+          <button class="play-vdo">
+            ::before
+          </button>
         </div>
         <p
           style="font-size: 30px;
@@ -117,6 +119,7 @@ import backgroundUrl_1_1 from "~/assets/home/mondstadt.jpg";
 import backgroundUrl_1_2 from "~/assets/home/c_mondstadt.png";
 import backgroundUrl_2_1 from "~/assets/home/liyue.jpg";
 import backgroundUrl_2_2 from "~/assets/home/c_liyue.png";
+
 export default {
   layout: "App",
   components: {
@@ -145,6 +148,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.modal {
+  transition: opacity 0.25s ease;
+}
+
 .go_new {
   position: absolute;
   right: 33px;
@@ -269,11 +276,34 @@ export default {
     height: 48px;
     border-radius: 50%;
     border: 0;
-    background: #fff;
+    background-color: #fff;
     font-size: 0;
     cursor: pointer;
     outline: none;
     transition: background 0.2s linear;
+  }
+  .play-vdo:hover {
+    background: transparent;
+  }
+
+  .play-vdo:hover::before {
+    background: url("../assets/home/btn_play_click.png") no-repeat;
+    background-position: center bottom;
+  }
+
+  .play-vdo::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 28px;
+    height: 28px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: url("../assets/home/btn_play_click.png") no-repeat;
+    background-position: center top;
   }
 }
 

@@ -1,8 +1,9 @@
 <template>
   <div class="app">
     <div class="music fixed">
-      <button>
-        <img class="w-8" src="../assets/nav/music.png" />
+      <button @click="music_cansee = !music_cansee" style="outline:none;">
+        <img class="w-8" src="../assets/nav/music.png" v-if="music_cansee" />
+        <img class="w-8" src="../assets/nav/music_c.png" v-else />
       </button>
     </div>
     <div class="nav-bar">
@@ -43,6 +44,16 @@
     <Nuxt />
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      music_cansee: true
+    };
+  }
+};
+</script>
 
 <style scoped lang="scss">
 .music {
