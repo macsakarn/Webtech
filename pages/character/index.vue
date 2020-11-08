@@ -16,7 +16,7 @@
 </template>
 <script>
 export default {
-  layout: "App",
+  // layout: "App",
 };
 </script>
 
