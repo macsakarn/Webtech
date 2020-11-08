@@ -6,54 +6,12 @@
     <div class="character__bg character__bg2">
       <img src="..\..\assets\City\mond\2020021114281985438.jpg" />
     </div>
+
     <ul class="character__sidebar">
       <li class="character__city character__city--active">
-        <a href="" class="nuxt-link-active"> Mondstadt </a>
+        <a class="nuxt-link-active"> Mondstadt </a>
       </li>
-      <li class="character__city character__city--active">
-        <a href="" class="nuxt-link-active"> Liyue Harbor </a>
-      </li>
-      <li class="character__city character__city--disable">Coming Soon</li>
     </ul>
-
-    <div class="character__main">
-      <div
-        class="swiper-container character__swiper--con swiper-container-fade swiper-container-initialized swiper-container-horizontal"
-      ></div>
-      <ul class="swiper-wrapper">
-        <li
-          class="swiper-slide swiper-slide-active"
-          style="
-            width: 1280px;
-            opacity: 1;
-            transform: translate3d(0px, 0px, 0px);
-          "
-        >
-          <img
-            src="..\..\assets\City\mond\character_1.png"
-            draggable="false"
-            class="character__person animated"
-          />
-          <img
-            src="..\..\assets\City\mond\backgroud_1.png"
-            draggable="false"
-            class="character__icon"
-          />
-          <div
-            data-swiper-parallax-opacity=".1"
-            data-swiper-parallax-duration=".5"
-            class="character__content"
-            style="opacity: 1; transform: translate3d(0px, 0px, 0px)"
-          >
-            <img
-              src="..\..\assets\City\mond\namechar_1.png"
-              draggable="false"
-              class="character__name"
-            />
-          </div>
-        </li>
-      </ul>
-    </div>
   </div>
 </template>
 <script>
@@ -63,12 +21,60 @@ export default {
 </script>
 
 <style scoped>
+/* background */
+@keyframes breath {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes bg-change {
+  48% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  98% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .character__bg1 {
+  -webkit-animation: breath 80s infinite linear;
   animation: breath 80s infinite linear;
+  animation-duration: 80s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: breath;
   opacity: 1;
 }
 .character__bg2 {
+  -webkit-animation: bg-change 15s infinite linear, breath 80s infinite linear;
   animation: bg-change 15s infinite linear, breath 80s infinite linear;
+  animation-duration: 15s, 80s;
+  animation-timing-function: linear, linear;
+  animation-delay: 0s, 0s;
+  animation-iteration-count: infinite, infinite;
+  animation-direction: normal, normal;
+  animation-fill-mode: none, none;
+  animation-play-state: running, running;
+  animation-name: bg-change, breath;
   opacity: 0;
 }
 .character__bg {
@@ -78,10 +84,13 @@ export default {
   left: 0;
   right: 0;
   background-position: center;
+  background-position-x: center;
+  background-position-y: center;
   background-size: cover;
+  -webkit-transform-origin: center;
   transform-origin: center;
 }
-
+/* สไลด์ชื่อเมืองด้านข้าง */
 .character__sidebar {
   position: absolute;
   z-index: 9;
@@ -92,7 +101,24 @@ export default {
   box-sizing: border-box;
   padding-top: 187px;
 }
+.character__sidebar::before {
+  position: absolute;
+  top: 0;
+  left: 37px;
+  display: block;
+  content: "";
+  width: 2px;
+  height: 1280px;
+  background: rgba(255, 255, 255, 0.14);
+}
 
+.character__city--active {
+  text-shadow: none;
+  padding-left: 70px;
+  background: left center no-repeat;
+  background-image: url("../../assets/City/liyue/line.png");
+  background-size: contain;
+}
 .character__city {
   width: 100%;
   height: 54px;
@@ -104,77 +130,11 @@ export default {
   padding-left: 56px;
   cursor: pointer;
   background: 18px center no-repeat;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpERTgyOUEzQkFBMDQxMUU5QjQ2REMwOUFGODE3Qzc5MiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpERTgyOUEzQ0FBMDQxMUU5QjQ2REMwOUFGODE3Qzc5MiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkRFODI5QTM5QUEwNDExRTlCNDZEQzA5QUY4MTdDNzkyIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkRFODI5QTNBQUEwNDExRTlCNDZEQzA5QUY4MTdDNzkyIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+8pIp1gAAAHhJREFUeNrs18EKgCAQRVGNftsJ6sNHW0QuXNUzBroPZiUMB0ZFs7unyFlS8AAECBAgQIAAAQLsY62KtOP5YBXV5neKqu8MnBQ5C3fF3vZX7EF/uPbpHrTIIx4hZYdkFV4IezfWQ9U08y8GCBAgQIAAAQL8NbAKMAD/HXfdYwQY6gAAAABJRU5ErkJggg==);
+  background-image: url("../../assets/City/liyue/bottom_city.png");
   background-size: 40px;
-}
-
-.character__city--active {
-  text-shadow: none;
-  padding-left: 70px;
-  background: left center no-repeat;
-  /* background-image: url(../..); */
-  background-size: contain;
-}
-
-.character__main {
-  background-size: auto 800px;
-}
-
-.character__main {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  /* background-image: url("../../assets/City/liyue/6c9d197.png") no-repeat; */
-  background-position-x: center;
-  background-repeat-x: no-repeat;
-  background-repeat-y: no-repeat;
-  background-attachment: initial;
-  background-origin: initial;
-  background-clip: initial;
-  background-color: initial;
-  background-position: center bottom;
-  background-size: auto 100vh;
-}
-
-.character__swiper--con {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-.character .swiper-slide-active .character__person,
-.character .swiper-slide-active .character__content {
-  opacity: 1;
-  transform: translateX(0);
-}
-.character__person {
-  position: absolute;
-  top: 0;
-  left: calc(50% - 63vh);
-  width: auto;
-  opacity: 0;
-  transform: translateX(500px);
-  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-.character__icon {
-  position: absolute;
-  top: 10vh;
-  left: calc(50% - 60vh);
-  width: auto;
-  height: 378px;
-  opacity: 0.1;
-}
-
-.character .swiper-slide-active .character__person,
-.character .swiper-slide-active .character__content {
-  opacity: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 </style>
