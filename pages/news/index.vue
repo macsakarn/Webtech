@@ -38,12 +38,12 @@
           Events
         </li>
       </ul>
-      <ul v-if="selected === 1" class="news_item">
+      <ul v-if="selected === 1" class="news_item_header">
         <news_list />
       </ul>
-      <ul v-else-if="selected === 2" class="news_item"></ul>
-      <ul v-else-if="selected == 3" class="news_item"></ul>
-      <ul v-else-if="selected == 4" class="news_item"></ul>
+      <ul v-else-if="selected === 2" class="news_item_header"></ul>
+      <ul v-else-if="selected == 3" class="news_item_header"></ul>
+      <ul v-else-if="selected == 4" class="news_item_header"></ul>
     </div>
   </div>
 </template>
@@ -93,7 +93,7 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-.news_item {
+.news_item_header {
   margin-top: 38px;
   list-style-type: none;
   height: auto;
