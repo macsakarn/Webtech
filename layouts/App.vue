@@ -2,13 +2,13 @@
   <div class="app">
     <div class="nav_bar_home">
       <div class="music fixed">
-        <button @click="music_cansee = !music_cansee" style="outline:none;">
+        <button @click="music_cansee = !music_cansee" style="outline: none">
           <img class="w-8" src="../assets/nav/music.png" v-if="music_cansee" />
           <img class="w-8" src="../assets/nav/music_c.png" v-else />
         </button>
       </div>
       <div class="nav-bar">
-        <div class="logo inline ">
+        <div class="logo inline">
           <img class="inline move" src="../assets/nav/logo_3.png" alt="LOGO" />
         </div>
 
@@ -16,7 +16,7 @@
           <!-- <div style="position: absolute; z-index: 1; transition: all 0.2s ease-in-out 0s; background-color: rgb(105, 224, 255); height: 5px; left: 55px; width: 42px; top: 0px;"></div> -->
           <NuxtLink to="/" class="mx-2">HOME</NuxtLink>
           <NuxtLink to="/news" class="mx-2">NEWS</NuxtLink>
-          <NuxtLink to="/character" class="mx-2">CHARACTERS</NuxtLink>
+          <NuxtLink to="/character/mondstadt" class="mx-2">CHARACTERS</NuxtLink>
           <div class="dropdown inline-block py-8">
             <a class="mx-2 my-5">EXPLORE</a>
             <ul class="drop bg-opacity-75">
@@ -36,7 +36,7 @@
           <NuxtLink to="/#" class="mx-2">REDEEM CODE</NuxtLink>
         </div>
 
-        <div class="nav__login inline ">
+        <div class="nav__login inline">
           <button class="btn_login">
             <span>Log In</span>
             <img class="inline" src="../assets/nav/login.png" alt="login" />
@@ -104,11 +104,10 @@
                 "PlayStation Family Mark" and "PS4 logo" are registered
                 trademarks or trademarks of Sony Interactive Entertainment Inc.
               </div>
-              <div class="icon_footer flex pt-5 ">
+              <div class="icon_footer flex pt-5">
                 <img
                   src="../assets/footer/age.png"
-                  style="margin-right: 10px;
-margin-bottom: 10px;"
+                  style="margin-right: 10px; margin-bottom: 10px"
                 />
                 <img src="../assets/footer/teen.png" />
               </div>
@@ -124,9 +123,9 @@ margin-bottom: 10px;"
 export default {
   data() {
     return {
-      music_cansee: true
+      music_cansee: true,
     };
-  }
+  },
 };
 </script>
 
