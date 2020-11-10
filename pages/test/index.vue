@@ -1,17 +1,17 @@
 <template>
   <div class="text-center">
-    <div class="h-64 my-20">
-      <ul v-if="selected === 1" class="news_item_header">
-        mac1
+    <div class="">
+      <ul v-if="selected === 1">
+        <img src="../../assets/City/liyue/character_5.png" />
       </ul>
-      <ul v-else-if="selected === 2" class="news_item_header">
-        mac2
+      <ul v-else-if="selected === 2">
+        <img src="../../assets/City/liyue/character_2.png" />
       </ul>
-      <ul v-else-if="selected == 3" class="news_item_header">
-        mac3
+      <ul v-else-if="selected == 3">
+        <img src="../../assets/City/liyue/character_3.png" />
       </ul>
-      <ul v-else-if="selected == 4" class="news_item_header">
-        mac4
+      <ul v-else-if="selected == 4">
+        <img src="../../assets/City/liyue/character_4.png" />
       </ul>
     </div>
     <hr />
@@ -21,28 +21,28 @@
         @click="selected = 1"
         :class="{ highlight: selected == 1 }"
       >
-        กดที่ตัวที่ 1
+        น้องหัวฟ้า
       </li>
       <li
         class="flex-1"
         @click="selected = 2"
         :class="{ highlight: selected == 2 }"
       >
-        กดที่ตัวที่ 2
+        น้องตาเดียว
       </li>
       <li
         class="flex-1"
         @click="selected = 3"
         :class="{ highlight: selected == 3 }"
       >
-        กดที่ตัวที่ 3
+        น้องผมยาว
       </li>
       <li
         class="flex-1"
         @click="selected = 4"
         :class="{ highlight: selected == 4 }"
       >
-        กดที่ตัวที่ 4
+        น้องหมี
       </li>
     </ul>
   </div>
@@ -58,4 +58,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+img {
+  display: block;
+  margin: auto;
+  width: 500px;
+}
+</style>
