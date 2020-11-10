@@ -8,6 +8,42 @@
           :item="news_re"
         />
       </ul>
+      <ul class="btn_category">
+        <li
+          class="cat_item"
+          @click="selected = 1"
+          :class="{ highlight: selected == 1 }"
+        >
+          Latest
+        </li>
+        <li
+          class="cat_item"
+          @click="selected = 2"
+          :class="{ highlight: selected == 2 }"
+        >
+          Info
+        </li>
+        <li
+          class="cat_item"
+          @click="selected = 3"
+          :class="{ highlight: selected == 3 }"
+        >
+          Updates
+        </li>
+        <li
+          class="cat_item"
+          @click="selected = 4"
+          :class="{ highlight: selected == 4 }"
+        >
+          Events
+        </li>
+      </ul>
+      <ul v-if="selected === 1" class="news_item">
+        <news_list />
+      </ul>
+      <ul v-else-if="selected === 2" class="news_item"></ul>
+      <ul v-else-if="selected == 3" class="news_item"></ul>
+      <ul v-else-if="selected == 4" class="news_item"></ul>
     </div>
   </div>
 </template>
@@ -19,10 +55,12 @@ import news_img_3 from "../../assets/news/news_3.png";
 export default {
   layout: "App",
   components: {
-    news_recommend: () => import("../../components/news_recommend")
+    news_recommend: () => import("../../components/news_recommend"),
+    news_list: () => import("../../components/news_list")
   },
   data() {
     return {
+      selected: 1,
       news_re: [
         {
           id: 1,
@@ -55,6 +93,13 @@ export default {
 };
 </script>
 <style scoped lang="scss">
+.news_item {
+  margin-top: 38px;
+  list-style-type: none;
+  height: auto;
+  transition: all 0.5s 0s ease;
+}
+
 .news_star {
   display: flex;
   justify-content: space-between;
@@ -62,6 +107,33 @@ export default {
   width: 100%;
   height: 700px;
   list-style-type: none;
+}
+
+.btn_category {
+  margin-top: 38px;
+  list-style-type: none;
+  .cat_item {
+    display: inline-block;
+    min-width: 155px;
+    height: 36px;
+    line-height: 36px;
+    background-color: rgba(57, 59, 64, 0.18);
+    color: #393b40;
+    border-radius: 4px;
+    text-align: center;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: all 0.2s 0s ease;
+    &:hover {
+      background-color: #393b40;
+      color: #f4d8a8;
+    }
+  }
+
+  .highlight {
+    background-color: #393b40;
+    color: #f4d8a8;
+  }
 }
 
 .news {
