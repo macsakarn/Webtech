@@ -1,30 +1,14 @@
 <template>
-  <div class="content">
-    <home_com1 />
-    <btn_play @click.native="modalOpen = true" />
-    <model_play v-if="modalOpen" @close="modalOpen = false" />
+  <div class="pv-btn-wrapper">
+    <button class="pv-btn" @click="modalOpen = true"></button>
   </div>
 </template>
 
 <script>
-export default {
-  components: {
-    home_com1: () => import("../components/home_com1"),
-    btn_play: () => import("../components/btn_play"),
-    model_play: () => import("../components/model_play")
-  },
-  data() {
-    return {
-      modalOpen: false
-    };
-  }
-};
+export default {};
 </script>
 
 <style lang="scss" scoped>
-.content {
-  position: relative;
-}
 .pv-btn-wrapper {
   position: absolute;
   top: 856px;

@@ -36,7 +36,7 @@
           <NuxtLink to="/#" class="mx-2">REDEEM CODE</NuxtLink>
         </div>
 
-        <div class="nav__login inline">
+        <div class="nav__login inline" @click="showModal_login = true">
           <button class="btn_login">
             <span>Log In</span>
             <img class="inline" src="../assets/nav/login.png" alt="login" />
@@ -44,7 +44,7 @@
         </div>
       </div>
     </div>
-
+    <model_login v-if="showModal_login" @close="showModal_login = false" />
     <Nuxt />
 
     <div class="footer">
@@ -121,11 +121,15 @@
 
 <script>
 export default {
+  components: {
+    model_login: () => import("../components/model_login")
+  },
   data() {
     return {
-      music_cansee: true,
+      showModal_login: false,
+      music_cansee: true
     };
-  },
+  }
 };
 </script>
 
