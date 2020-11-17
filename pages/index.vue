@@ -3,6 +3,7 @@
     <home_com1 />
     <btn_play @click.native="modalOpen = true" />
     <model_play v-if="modalOpen" @close="modalOpen = false" />
+    <home_com2 />
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 export default {
   components: {
     home_com1: () => import("../components/home_com1"),
+    home_com2: () => import("../components/home_com2"),
     btn_play: () => import("../components/btn_play"),
     model_play: () => import("../components/model_play")
   },
