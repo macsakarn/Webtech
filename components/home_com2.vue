@@ -58,38 +58,62 @@
     </h2>
     <div class="pc-ch__swiper game-ad-swiper">
       <div class="pc-ch__container">
-        <div class="pc-ch__slide">
+        <div class="pc-ch__slide" :class="[img_wrap[0]]">
           <img src="../assets/new_home/image_s1.png" class="pc-ch__img" />
         </div>
-        <div class="pc-ch__slide">
+        <div class="pc-ch__slide" :class="[img_wrap[1]]">
           <img src="../assets/new_home/image_s2.png" class="pc-ch__img" />
         </div>
-        <div class="pc-ch__slide">
+        <div class="pc-ch__slide" :class="[img_wrap[2]]">
           <img src="../assets/new_home/image_s3.png" class="pc-ch__img" />
         </div>
-        <div class="pc-ch__slide">
+        <div class="pc-ch__slide" :class="[img_wrap[3]]">
           <img src="../assets/new_home/image_s4.png" class="pc-ch__img" />
         </div>
-        <div class="pc-ch__slide">
+        <div class="pc-ch__slide" :class="[img_wrap[4]]">
           <img src="../assets/new_home/image_s5.png" class="pc-ch__img" />
         </div>
-        <div class="pc-ch__slide">
+        <div class="pc-ch__slide" :class="[img_wrap[5]]">
           <img src="../assets/new_home/image_s6.png" class="pc-ch__img" />
         </div>
       </div>
       <div class="pc-ch__bar">
-        <div class="pc-ch__prev">
+        <div class="pc-ch__prev" @click="move(false)">
           <img src="../assets/new_home/image_back.png" />
         </div>
         <div class="pc-ch__pagination">
-          <div class="pc-ch__pagination-bullet"></div>
-          <div class="pc-ch__pagination-bullet"></div>
-          <div class="pc-ch__pagination-bullet"></div>
-          <div class="pc-ch__pagination-bullet"></div>
-          <div class="pc-ch__pagination-bullet"></div>
-          <div class="pc-ch__pagination-bullet"></div>
+          <div
+            class="pc-ch__pagination-bullet"
+            @click="img_input(0)"
+            :class="{ btn_active: btn_active === 0 }"
+          ></div>
+          <div
+            class="pc-ch__pagination-bullet"
+            @click="img_input(1)"
+            :class="{ btn_active: btn_active === 1 }"
+          ></div>
+          <div
+            class="pc-ch__pagination-bullet"
+            @click="img_input(2)"
+            :class="{ btn_active: btn_active === 2 }"
+          ></div>
+          <div
+            class="pc-ch__pagination-bullet"
+            @click="img_input(3)"
+            :class="{ btn_active: btn_active === 3 }"
+          ></div>
+          <div
+            class="pc-ch__pagination-bullet"
+            @click="img_input(4)"
+            :class="{ btn_active: btn_active === 4 }"
+          ></div>
+          <div
+            class="pc-ch__pagination-bullet"
+            @click="img_input(5)"
+            :class="{ btn_active: btn_active === 5 }"
+          ></div>
         </div>
-        <div class="pc-ch__next">
+        <div class="pc-ch__next" @click="move(true)">
           <img src="../assets/new_home/image_next.png" />
         </div>
       </div>
@@ -154,7 +178,99 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      btn_active: 0,
+      img_wrap: [
+        "pc-ch__slide--active",
+        "pc-ch__slide--next1",
+        "pc-ch__slide--next2",
+        "",
+        "pc-ch__slide--prev2",
+        "pc-ch__slide--prev1"
+      ]
+    };
+  },
+  methods: {
+    img_input(data) {
+      if (data == 0) {
+        this.btn_active = 0;
+        this.img_wrap = [
+          "pc-ch__slide--active",
+          "pc-ch__slide--next1",
+          "pc-ch__slide--next2",
+          "",
+          "pc-ch__slide--prev2",
+          "pc-ch__slide--prev1"
+        ];
+      } else if (data == 1) {
+        this.btn_active = 1;
+        this.img_wrap = [
+          "pc-ch__slide--prev1",
+          "pc-ch__slide--active",
+          "pc-ch__slide--next1",
+          "pc-ch__slide--next2",
+          "",
+          "pc-ch__slide--prev2"
+        ];
+      } else if (data == 2) {
+        this.btn_active = 2;
+        this.img_wrap = [
+          "pc-ch__slide--prev2",
+          "pc-ch__slide--prev1",
+          "pc-ch__slide--active",
+          "pc-ch__slide--next1",
+          "pc-ch__slide--next2",
+          ""
+        ];
+      } else if (data == 3) {
+        this.btn_active = 3;
+        this.img_wrap = [
+          "",
+          "pc-ch__slide--prev2",
+          "pc-ch__slide--prev1",
+          "pc-ch__slide--active",
+          "pc-ch__slide--next1",
+          "pc-ch__slide--next2"
+        ];
+      } else if (data == 4) {
+        this.btn_active = 4;
+        this.img_wrap = [
+          "pc-ch__slide--next2",
+          "",
+          "pc-ch__slide--prev2",
+          "pc-ch__slide--prev1",
+          "pc-ch__slide--active",
+          "pc-ch__slide--next1"
+        ];
+      } else if (data == 5) {
+        this.btn_active = 5;
+        this.img_wrap = [
+          "pc-ch__slide--next1",
+          "pc-ch__slide--next2",
+          "",
+          "pc-ch__slide--prev2",
+          "pc-ch__slide--prev1",
+          "pc-ch__slide--active"
+        ];
+      }
+    },
+    move(data) {
+      if (data) {
+        console.log((this.btn_active + 1) % 6);
+        this.btn_active = (this.btn_active + 1) % 6;
+      } else {
+        console.log(this.btn_active - 1);
+        this.btn_active = this.btn_active - 1;
+        if (this.btn_active < 0) {
+          this.btn_active = 5;
+        }
+      }
+      this.img_input(this.btn_active);
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -390,5 +506,35 @@ export default {};
   &:hover {
     background: url("../assets/new_home/image_dot2.png") center/cover no-repeat;
   }
+}
+.btn_active {
+  background: url("../assets/new_home/image_dot2.png") center/cover no-repeat;
+}
+
+.pc-ch__slide--active {
+  -webkit-transform: translate3d(0, 0, 0) scale(1);
+  transform: translate3d(0, 0, 0) scale(1);
+  opacity: 1;
+  z-index: 2;
+}
+.pc-ch__slide--next1 {
+  -webkit-transform: translate3d(237px, 0, 0) scale(0.87);
+  transform: translate3d(237px, 0, 0) scale(0.87);
+  opacity: 1;
+  z-index: 1;
+}
+.pc-ch__slide--next2 {
+  -webkit-transform: translate3d(237px, 0, 0) scale(0.74);
+  transform: translate3d(237px, 0, 0) scale(0.74);
+}
+.pc-ch__slide--prev1 {
+  -webkit-transform: translate3d(-237px, 0, 0) scale(0.87);
+  transform: translate3d(-237px, 0, 0) scale(0.87);
+  opacity: 1;
+  z-index: 1;
+}
+.pc-ch__slide--prev2 {
+  -webkit-transform: translate3d(-237px, 0, 0) scale(0.74);
+  transform: translate3d(-237px, 0, 0) scale(0.74);
 }
 </style>
