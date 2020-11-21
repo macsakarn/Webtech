@@ -1,7 +1,12 @@
 <template>
   <div class="home">
     <div class="poster">
-      <div class="video-bg" style="width: 1536px; height: 760px;">
+      <div
+        id="bgWrap"
+        class="video-bg"
+        style="width: 1536px;
+height: 760px;"
+      >
         <video
           loop
           muted
@@ -18,13 +23,7 @@
             ::before
           </button>
         </div>
-        <p
-          style="font-size: 30px;
-color: #fff;
-text-align: center;
-text-shadow: 0 0 10px rgba(114, 71, 21, 0.68), 0 0 10px rgba(114, 71, 21, 0.68);
-margin: 32px auto 27px;"
-        >
+        <p class="text_sign">
           Released on Multiple Platforms - Download Now!
         </p>
         <ul class="downlond-game flex">
@@ -159,23 +158,19 @@ export default {
       modalOpen: false,
       isUserScrolling: 0
     };
-  },
-  created() {
-    window.addEventListener("scroll", this.handleScroll);
-  },
-  destroyed() {
-    window.removeEventListener("scroll", this.handleScroll);
-  },
-  methods: {
-    handleScroll(event) {
-      this.isUserScrolling = window.scrollY > 0;
-      console.log("calling handleScroll");
-    }
   }
 };
 </script>
 
 <style scoped lang="scss">
+.text_sign {
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(114, 71, 21, 0.68),
+    0 0 10px rgba(114, 71, 21, 0.68);
+  margin: 32px auto 27px;
+}
 .poster__age {
   position: absolute;
   z-index: 9;
@@ -263,6 +258,17 @@ export default {
   height: 100%;
   overflow: hidden;
 
+  #bgWrap {
+    display: flex;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    justify-content: center;
+    align-items: center;
+    background: #fcf9fe;
+  }
   .video-bg {
     display: flex;
     left: 0;

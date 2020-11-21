@@ -14,7 +14,7 @@
 
         <div class="nav inline">
           <!-- <div style="position: absolute; z-index: 1; transition: all 0.2s ease-in-out 0s; background-color: rgb(105, 224, 255); height: 5px; left: 55px; width: 42px; top: 0px;"></div> -->
-          <NuxtLink to="/" class="mx-2">HOME</NuxtLink>
+          <NuxtLink to="/home" class="mx-2">HOME</NuxtLink>
           <NuxtLink to="/news" class="mx-2">NEWS</NuxtLink>
           <NuxtLink to="/character/mondstadt" class="mx-2">CHARACTERS</NuxtLink>
           <div class="dropdown inline-block py-8">
@@ -42,6 +42,13 @@
             <img class="inline" src="../assets/nav/login.png" alt="login" />
           </button>
         </div>
+
+        <NuxtLink to="/download" class="header__download">
+          <div
+            class="transition-img"
+            :style="{ backgroundImage: 'url(' + image + ')' }"
+          ></div>
+        </NuxtLink>
       </div>
     </div>
     <model_login v-if="showModal_login" @close="showModal_login = false" />
@@ -120,12 +127,14 @@
 </template>
 
 <script>
+import download from "../assets/nav/download.png";
 export default {
   components: {
     model_login: () => import("../components/model_login")
   },
   data() {
     return {
+      image: download,
       showModal_login: false,
       music_cansee: true
     };
@@ -134,6 +143,19 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.header__download {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100%;
+}
+.transition-img {
+  width: 100%;
+  height: 100%;
+  background: center/cover no-repeat;
+  background-image: none;
+}
 .footer {
   position: relative;
   z-index: 998;
@@ -193,9 +215,10 @@ export default {
   justify-content: flex-end;
   position: absolute;
   top: 0;
-  right: 30px;
+  right: 210px;
   height: 100%;
   white-space: nowrap;
+  font-size: 14px;
   span {
     color: #cccccc;
   }
