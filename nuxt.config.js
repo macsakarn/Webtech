@@ -1,13 +1,10 @@
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
-  build: {
-    publicPath: 'https://cdn.nuxtjs.org'
-  },
   ssr: false,
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: "nuxt_project",
+    title: "Genshin Impact – Step Into a Vast Magical World of Adventure",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -41,5 +38,10 @@ export default {
   modules: [],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {}
+  build: {
+    publicPath: 'http://10.0.15.12/projects/pg46txb/'
+  },
+  router: {
+    base: '/projects/pg46txb/'
+  }
 };

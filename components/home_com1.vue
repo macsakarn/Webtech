@@ -1,10 +1,10 @@
 <template>
   <div class="fab-kv">
     <img class="logo" src="../assets/new_home/logo.png" />
-    <a href="/home" class="official-site" target="_blank">
+    <a href="/projects/pg46txb/home" class="official-site" target="_blank">
       <div class="img_1 transition-img official-site-img"></div>
     </a>
-    <a href="" class="download-link" target="_blank">
+    <a href="/projects/pg46txb/download" class="download-link" target="_blank">
       <div class="img_2 transition-img download-link-img"></div>
     </a>
     <div class="img_3 transition-img kv-title-wrapper"></div>
