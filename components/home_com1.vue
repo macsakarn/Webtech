@@ -92,5 +92,9 @@ export default {};
   .img_3 {
     background-image: url("../assets/new_home/logo_center.png");
   }
+  .official-site-img:hover,
+  .download-link-img:hover {
+    opacity: 1;
+  }
 }
 </style>
