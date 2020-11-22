@@ -33,7 +33,7 @@
             >FORUMS</a
           >
           <NuxtLink to="/#" class="mx-2">TOP-UP</NuxtLink>
-          <NuxtLink to="/#" class="mx-2">REDEEM CODE</NuxtLink>
+          <NuxtLink to="/gift" class="mx-2">REDEEM CODE</NuxtLink>
         </div>
 
         <div class="nav__login inline" @click="showModal_login = true">
