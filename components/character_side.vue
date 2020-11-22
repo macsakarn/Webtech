@@ -1,17 +1,15 @@
 <template>
-    <ul class="character__sidebar">
-      <li class="character__city character__city--active">
-        <NuxtLink to="/character/mondstadt" class="nuxt-link-active"> Mondstadt </NuxtLink>
-      </li>
-      <li class="character__city ">
-        <NuxtLink to="/character/liyue" > 
-          Liyue Harbor </NuxtLink>
-      </li>
-      <li class="character__city character__city--disable">
-          Coming Soon
-      </li>
-      
-    </ul>
+  <ul class="character__sidebar">
+    <li class="character__city character__city--active">
+      <NuxtLink to="/character/mondstadt" class="nuxt-link-active">
+        Mondstadt
+      </NuxtLink>
+    </li>
+    <li class="character__city">
+      <NuxtLink to="/character/liyue"> Liyue Harbor </NuxtLink>
+    </li>
+    <li class="character__city character__city--disable">Coming Soon</li>
+  </ul>
 </template>
 
 <style lang="scss" scoped>
@@ -63,8 +61,6 @@
 }
 
 .character__city--disable {
-    pointer-events: none;
+  pointer-events: none;
 }
-
-
 </style>
