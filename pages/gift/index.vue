@@ -50,6 +50,37 @@
         </div>
         <button type="submit" class="cdkey-form__submit">Redeem</button>
       </form>
+      <div class="cdkey-desc">
+        <div class="cdkey-desc__title">About Code Redemption</div>
+        <div class="cdkey-desc__content">
+          <p style="">
+            1. Before redeeming a code, log in to your account and make sure you
+            have created a character in the game and have linked your miHoYo
+            account in the User Center. Otherwise, you will be unable to redeem
+            the code.
+          </p>
+          <p style="">
+            2. After redeeming a code, you will receive the redeemed item via
+            in-game mail. Check in-game to see that you have received it.
+          </p>
+          <p style="">
+            3. Pay attention to the redemption conditions and validity period of
+            the redemption code. A code cannot be redeemed after it expires.
+          </p>
+          <p style="">
+            4. Each redemption code can only be used once. The same character
+            cannot use redemption codes of the same type more than once.
+          </p>
+          <p style="">
+            5. Once a code is redeemed, the redemption cannot be revoked. Make
+            sure you log into the correct account before redeeming the code.
+          </p>
+          <p style="">
+            6. If you encounter any problems during the code redemption process,
+            please contact Customer Service.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -203,5 +234,40 @@ export default {
   outline: none;
   border: none;
   font-family: inherit;
+}
+.cdkey-desc {
+  position: relative;
+  padding-left: 60px;
+  width: 426px;
+  color: #4e4d4b;
+  background: url("../../assets/gift/center.png") top left/10px 350px no-repeat;
+}
+.cdkey-desc__title {
+  margin-bottom: 34px;
+  text-align: center;
+  line-height: 25px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.cdkey-desc__content {
+  padding-right: 24px;
+  height: 300px;
+  font-size: 16px;
+  line-height: 24px;
+  overflow-y: auto;
+}
+.cdkey-desc__content::before {
+  content: "";
+  position: absolute;
+  right: 24px;
+  bottom: -10px;
+  left: 60px;
+  z-index: 1;
+  height: 40px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0,
+    rgba(243, 240, 236, 0.5) 20px
+  );
 }
 </style>
