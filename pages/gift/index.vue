@@ -22,13 +22,33 @@
         </div>
         <div class="cdkey-form__field">
           <div class="cdkey-form__label-wrap">
-            <label class="cdkey-form__label">Server</label>
+            <label class="cdkey-form__label">Character Nickname</label>
           </div>
           <div class="cdkey-form__input-wrap">
-            <input disabled="disabled" type="text" class="cdkey-form__input" />
+            <input
+              disabled="disabled"
+              type="text"
+              class="cdkey-form__input"
+              placeholder="Obtain character nickname"
+            />
             <div class="cdkey-form__error"></div>
           </div>
         </div>
+        <div class="cdkey-form__field">
+          <div class="cdkey-form__label-wrap">
+            <label class="cdkey-form__label">Redemption Code</label>
+          </div>
+          <div class="cdkey-form__input-wrap">
+            <input
+              disabled="disabled"
+              type="text"
+              class="cdkey-form__input"
+              placeholder="Enter redemption code"
+            />
+            <div class="cdkey-form__error"></div>
+          </div>
+        </div>
+        <button type="submit" class="cdkey-form__submit">Redeem</button>
       </form>
     </div>
   </div>
@@ -169,5 +189,19 @@ export default {
   font-size: 16px;
   line-height: 20px;
   color: #f00;
+}
+.cdkey-form__submit {
+  display: block;
+  margin: 8px 0 0 145px;
+  width: 360px;
+  height: 58px;
+  font-size: 24px;
+  color: #f4c780;
+  background: #393b40;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-family: inherit;
 }
 </style>
