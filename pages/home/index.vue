@@ -1,18 +1,13 @@
 <template>
   <div class="home">
     <div class="poster">
-      <div
-        id="bgWrap"
-        class="video-bg"
-        style="width: 1536px;
-height: 760px;"
-      >
+      <div id="bgWrap" class="video-bg" style="width: 1920px; height: 947px;">
         <video
           loop
           muted
           autoplay
           poster="https://genshin.mihoyo.com/_nuxt/img/47f71d4.jpg"
-          style="opacity: 1; width: 1536px; height: 864px;"
+          style="opacity: 1; width: 2133px; height: 1199.81px;"
         >
           <source src="../../assets/video/3e78e80.mp4" type="audio/mp4" />
         </video>

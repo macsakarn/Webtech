@@ -14,7 +14,7 @@ export default {
       {
         rel: "icon",
         type: "image/x-icon",
-        href: "/communityIcon_o9f1yvyep7r51.ico"
+        href: "communityIcon_o9f1yvyep7r51.ico"
       }
     ]
   },
